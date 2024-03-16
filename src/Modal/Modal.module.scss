@@ -1,0 +1,118 @@
+$h3: 25px;
+$p: 16px;
+$animate_in: 0.5s;
+$animate_out: 0.3s;
+$additional-height: 10px;
+
+// @keyframes show {
+//   0% {
+//     transform: scale(0.8);
+//   }
+//   45% {
+//     transform: scale(1.02);
+//   }
+//   80% {
+//     transform: scale(0.98);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }
+// @keyframes hide {
+//   0% {
+//     transform: scale(1);
+//   }
+//   100% {
+//     transform: scale(0.5);
+//   }
+// }
+// @keyframes addOpacity {
+//   0% {
+//     opacity: 0;
+//   }
+
+//   100% {
+//     opacity: 1;
+//   }
+// }
+// @keyframes deleteOpacity {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+.formContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1550;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity $animate_in;
+  animation: addOpacity $animate_in;
+}
+
+.FormBox,
+.FormBoxClose {
+  animation: show $animate_in ease-in-out;
+  transition: opacity $animate_in ease-in-out;
+  position: relative;
+
+  h3 {
+    font-size: $h3;
+    color: #2b4e66;
+    display: flex;
+    justify-content: center;
+    margin-top: 3px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .authForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 20px 20px;
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+    background-color: #3498db;
+    border-radius: 15px;
+    padding: 8px;
+    &:active {
+      background-color: #3498db;
+      transition: background 0.1s ease-in-out;
+    }
+    &:hover {
+      background-color: darken(#3498db, 8%);
+      transition: background 0.1s ease-in-out;
+    }
+  }
+}
+
+.FormBoxClose {
+  animation: hide $animate_out;
+  transition: opacity $animate_out;
+}
+
+.formContainer.CloseBackground {
+  transition: opacity $animate_out;
+  animation: deleteOpacity $animate_out;
+  pointer-events: auto; /* Разрешить события нажатия на фон */
+}

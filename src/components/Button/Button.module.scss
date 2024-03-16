@@ -1,0 +1,77 @@
+$primary-color: #3498db;
+$white-color: #fff;
+$button-background: #ecf0f1;
+$button-border: #a5a5a5;
+$button-text: #333;
+$button-background-transparent: rgba(0, 0, 0, 0.06);
+
+.button {
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.1s ease,
+    color 0.3s ease;
+  min-width: 120px;
+  user-select: none;
+}
+.button:disabled {
+  opacity: 0.5;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.primary {
+  background-color: $primary-color;
+  color: $white-color;
+  border: 1px solid $primary-color;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.default {
+  background-color: $button-background;
+  color: $button-text;
+  border: 1px solid lighten($button-border, 20%);
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.dashed {
+  background-color: transparent;
+  color: $button-text;
+  border: 1px dashed $button-border;
+  &:hover {
+    border-color: $button-text;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.text {
+  background-color: transparent;
+  color: $primary-color;
+  border: none;
+  &:hover {
+    background-color: $button-background-transparent;
+  }
+}
+
+.link {
+  background-color: transparent;
+  color: $primary-color;
+  border: none;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    color: darken($primary-color, 10%);
+  }
+}

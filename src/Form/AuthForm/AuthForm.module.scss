@@ -1,0 +1,29 @@
+.form {
+  & > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inputTitle {
+    font-size: 10px;
+    padding: 2px 0px 2px;
+  }
+  .inputTitle.error {
+    color: red;
+  }
+  .inputTitle.error .Field {
+    border: 1px solid red;
+  }
+  input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    width: 300px;
+    height: 35px;
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 8px;
+  }
+}
